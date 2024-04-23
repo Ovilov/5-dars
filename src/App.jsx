@@ -1,13 +1,14 @@
+import Title from "./components/Title";
+import TodoList from "./components/TodoList";
 import { useFetch } from "./hooks/useFetch";
 //
 //
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/Aboute"
-import Create from "./pages/Create"
+import About from "./pages/About";
+import Create from "./pages/Create";
 import MainLayout from "./layouts/MainLayout";
-import Navbar from "./components/Navbar";
 
 function App() {
   const {
@@ -19,25 +20,25 @@ function App() {
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <MainLayout/>,
+      element: <MainLayout />,
       children: [
         {
           index: true,
-          element : <Home/>
+          element: <Home />,
         },
         {
-          path: "./about",
-          element: <About/>
+          path: "/about",
+          element: <About />,
         },
         {
-          path: "./create",
-          element: <Create/>
-        }
-      ]
-    }
-  ])
+          path: "/create",
+          element: <Create />,
+        },
+      ],
+    },
+  ]);
 
-  return <RouterProvider router={routes} />
+  return <RouterProvider router={routes} />;
 }
 
 export default App;

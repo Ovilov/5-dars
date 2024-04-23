@@ -24,9 +24,10 @@ function useFetch(url) {
         setIsPending(false);
       }
     };
-    getData;
+    getData();
   }, [url]);
 
   return { data, error, isPending };
 }
 
+export { useFetch};
